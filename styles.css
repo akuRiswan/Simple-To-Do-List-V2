@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff204e, #5d0e41);
+  padding: 10px;
+}
+
+.wrapper {
+  background-color: #fff;
+  width: 100%;
+  max-width: 540px;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.wrapper-2 {
+  background-color: #fff;
+  width: 100%;
+  max-width: 540px;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.wrapper > h2 {
+  text-align: start;
+  margin-bottom: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  background-color: rgba(216, 216, 216, 0.723);
+  box-shadow: 0px 0px 10px#0000009f;
+  border-radius: 25px;
+  padding-left: 20px;
+}
+
+.row > input {
+  flex: 1;
+  outline: none;
+  border: none;
+  padding: 10px;
+  background: transparent;
+  font-weight: 14px;
+}
+
+.row > button {
+  padding: 10px 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: coral;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#list-container li,
+#completed-task-container li {
+  word-wrap: break-word;
+  text-align: justify;
+  list-style: none;
+  font-size: 17px;
+  padding: 10px 50px 10px 45px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  background-color: coral;
+  border: 1px #000 solid;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+#list-container li > p,
+#completed-task-container li > p {
+  font-size: 12px;
+  margin: 10px 0 0 0;
+}
+
+#list-container li::before,
+#completed-task-container li::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-image: url(./assets/images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 8px;
+  left: 10px;
+}
+
+#list-container li.checked,
+#completed-task-container li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+#list-container li.checked::before,
+#completed-task-container li.checked::before {
+  background-image: url(./assets/images/checked.png);
+}
+
+#list-container li span,
+#completed-task-container li span {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  color: #555;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+#list-container li span:hover,
+#completed-task-container li span:hover {
+  background-color: #fff;
+}

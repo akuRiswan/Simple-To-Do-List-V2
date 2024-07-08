@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple To Do List Version 2</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <h2>Simple To Do List - Version 2</h2>
+        <div class="row">
+          <input type="text" id="input-box" autocomplete="off" autocapitalize="off" au placeholder="Add Your Text" />
+          <button id="addButton" onclick="addTask()">Add</button>
+        </div>
+        <h3>Uncompleted Task</h3>
+        <ul id="list-container">
+          <!-- <li>
+            asaj<span>x</span><br />
+            <p>Time</p>
+          </li>
+          <li>
+            anjaysada<span>x</span><br />
+            <p>Time</p>
+          </li> -->
+        </ul>
+      </div>
+
+      <div class="wrapper-2">
+        <h2>Completed Task</h2>
+        <ul id="completed-task-container"></ul>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
