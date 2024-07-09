@@ -19,9 +19,13 @@ function addTask() {
     li.innerHTML = inputBox.value;
     listContainer.appendChild(li);
 
-    let breakLine = document.createElement("p");
-    breakLine.innerHTML = time;
-    li.appendChild(breakLine);
+    let circleIcon = document.createElement("i");
+    circleIcon.classList.add("bi-circle");
+    li.appendChild(circleIcon);
+
+    let dTime = document.createElement("p");
+    dTime.innerHTML = time;
+    li.appendChild(dTime);
 
     let span = document.createElement("span");
     span.innerHTML = "\u00d7";
@@ -34,10 +38,11 @@ function addTask() {
 listContainer.addEventListener(
   "click",
   function (e) {
-    if (e.target.tagName === "LI") {
-      e.target.classList.toggle("checked");
+    if (e.target.classList.contains("bi-circle")) {
+      e.target.classList.remove("bi-circle");
+      e.target.classList.add("bi-check-circle-fill");
       if (!e.target.classList.contains("")) {
-        completedTask.appendChild(e.target);
+        completedTask.appendChild(e.target.parentElement);
       }
       saveData();
     } else if (e.target.tagName === "SPAN") {
@@ -51,10 +56,11 @@ listContainer.addEventListener(
 completedTask.addEventListener(
   "click",
   function (e) {
-    if (e.target.tagName === "LI") {
-      e.target.classList.toggle("checked");
-      if (!e.target.classList.contains("checked")) {
-        listContainer.appendChild(e.target);
+    if (e.target.classList.contains("bi-check-circle-fill")) {
+      e.target.classList.remove("bi-check-circle-fill");
+      e.target.classList.add("bi-circle");
+      if (!e.target.classList.contains("")) {
+        listContainer.appendChild(e.target.parentElement);
       }
       saveData();
     } else if (e.target.tagName === "SPAN") {

@@ -18,7 +18,7 @@
   background-color: #fff;
   width: 100%;
   max-width: 540px;
-  margin: 100px auto 20px;
+  margin: 20px auto;
   padding: 40px 30px 70px;
   border-radius: 10px;
 }
@@ -76,7 +76,7 @@
   font-size: 17px;
   padding: 10px 50px 10px 45px;
   user-select: none;
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
   background-color: coral;
   border: 1px #000 solid;
@@ -90,7 +90,23 @@
   margin: 10px 0 0 0;
 }
 
-#list-container li::before,
+.bi-circle {
+  position: absolute;
+  left: 17px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.bi-check-circle-fill {
+  position: absolute;
+  left: 17px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* #list-container li::before,
 #completed-task-container li::before {
   content: "";
   position: absolute;
@@ -102,18 +118,18 @@
   background-position: center;
   top: 8px;
   left: 10px;
-}
+} */
 
 #list-container li.checked,
 #completed-task-container li.checked {
   color: #555;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 
-#list-container li.checked::before,
+/* #list-container li.checked::before,
 #completed-task-container li.checked::before {
   background-image: url(./assets/images/checked.png);
-}
+} */
 
 #list-container li span,
 #completed-task-container li span {
