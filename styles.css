@@ -49,7 +49,8 @@
 }
 
 .row > button {
-  padding: 10px 50px;
+  padding: 10px 0px;
+  width: 100px;
   border-radius: 25px;
   outline: none;
   border: none;
@@ -57,6 +58,10 @@
   font-size: 16px;
   color: #fff;
   cursor: pointer;
+}
+
+.wrapper-uncompleted {
+  min-height: 200px;
 }
 
 .bi-circle {
@@ -75,8 +80,8 @@
   cursor: pointer;
 }
 
-#list-container li,
-#completed-task-container li {
+#list-uncompleted li,
+#list-completed li {
   word-wrap: break-word;
   text-align: justify;
   list-style: none;
@@ -91,14 +96,14 @@
   margin: 10px 0;
 }
 
-#list-container li > p,
-#completed-task-container li > p {
+#list-uncompleted li > p,
+#list-completed li > p {
   font-size: 12px;
   margin: 10px 0 0 0;
 }
 
-#list-container li span,
-#completed-task-container li span {
+#list-uncompleted li span,
+#list-completed li span {
   position: absolute;
   right: 10px;
   top: 8px;
@@ -109,9 +114,10 @@
   line-height: 30px;
   text-align: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-#list-container li span:hover,
-#completed-task-container li span:hover {
+#list-uncompleted li span:hover,
+#list-completed li span:hover {
   background-color: #fff;
 }

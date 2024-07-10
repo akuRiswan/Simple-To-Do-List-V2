@@ -1,6 +1,6 @@
 const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("list-container");
-const completedTask = document.getElementById("completed-task-container");
+const uncompletedTask = document.getElementById("list-uncompleted");
+const completedTask = document.getElementById("list-completed");
 const addButton = document.getElementById("addButton");
 
 inputBox.addEventListener("keydown", function (e) {
@@ -17,7 +17,7 @@ function addTask() {
 
     let li = document.createElement("li");
     li.innerHTML = inputBox.value;
-    listContainer.appendChild(li);
+    uncompletedTask.appendChild(li);
 
     let circleIcon = document.createElement("i");
     circleIcon.classList.add("bi-circle");
@@ -35,13 +35,14 @@ function addTask() {
   saveData();
 }
 
-listContainer.addEventListener(
+uncompletedTask.addEventListener(
   "click",
   function (e) {
     if (e.target.classList.contains("bi-circle")) {
       e.target.classList.remove("bi-circle");
       e.target.classList.add("bi-check-circle-fill");
-      if (!e.target.classList.contains("")) {
+
+      if (!e.target.classList.contains("bi-circle")) {
         completedTask.appendChild(e.target.parentElement);
       }
       saveData();
@@ -59,8 +60,8 @@ completedTask.addEventListener(
     if (e.target.classList.contains("bi-check-circle-fill")) {
       e.target.classList.remove("bi-check-circle-fill");
       e.target.classList.add("bi-circle");
-      if (!e.target.classList.contains("")) {
-        listContainer.appendChild(e.target.parentElement);
+      if (!e.target.classList.contains("bi-check-circle-fill")) {
+        uncompletedTask.appendChild(e.target.parentElement);
       }
       saveData();
     } else if (e.target.tagName === "SPAN") {
@@ -73,11 +74,11 @@ completedTask.addEventListener(
 
 // Local Storage
 function saveData() {
-  localStorage.setItem("data", listContainer.innerHTML);
+  localStorage.setItem("data", uncompletedTask.innerHTML);
   localStorage.setItem("completedData", completedTask.innerHTML);
 }
 function showTask() {
-  listContainer.innerHTML = localStorage.getItem("data");
+  uncompletedTask.innerHTML = localStorage.getItem("data");
   completedTask.innerHTML = localStorage.getItem("completedData");
 }
 showTask();
